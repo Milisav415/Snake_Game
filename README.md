@@ -19,3 +19,5 @@ A classic Snake game implemented in Java using Swing for the GUI. This simple ve
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/snake-game-java.git
+
+<img src="image.png" width="512" height="512">
