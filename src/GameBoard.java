@@ -25,10 +25,11 @@ public class GameBoard extends JPanel implements ActionListener {
     private final int DOT_SIZE = 10;    // Size of each snake segment and the food
     private final int ALL_DOTS = (BOARD_WIDTH * BOARD_HEIGHT) / (DOT_SIZE * DOT_SIZE);
     private final int RAND_POS = 29;
-    private final int DELAY = 140;
+    private final int DELAY = 140; // change this for speedup
+    private int delay = 140;
 
-    private final int x[] = new int[ALL_DOTS];
-    private final int y[] = new int[ALL_DOTS];
+    private final int x[] = new int[ALL_DOTS]; // head x position
+    private final int y[] = new int[ALL_DOTS]; // head y position
 
     private int dots;        // Current length of the snake
     private int food_x;      // X coordinate of the food
@@ -41,7 +42,7 @@ public class GameBoard extends JPanel implements ActionListener {
 
     private GameState gameState = GameState.START_MENU;
 
-    private Timer timer;
+    private Timer timer; // interrupt timer
 
     public GameBoard() {
         initBoard();
@@ -154,6 +155,12 @@ public class GameBoard extends JPanel implements ActionListener {
         if ((x[0] == food_x) && (y[0] == food_y)) {
             dots++;
             locateFood();
+
+            // every 5 segments grown speed up:
+            if (dots % 5 == 0 && delay > 50) {
+                delay -= 10;
+                timer.setDelay(delay);
+            }
         }
     }
 
