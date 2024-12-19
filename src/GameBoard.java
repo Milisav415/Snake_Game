@@ -201,7 +201,7 @@ public class GameBoard extends JPanel implements ActionListener {
         food_y = r * DOT_SIZE;
     }
 
-    @Override
+    @Override // the main loop
     public void actionPerformed(ActionEvent e) {
         if (gameState == GameState.IN_GAME) {
             checkFood();
