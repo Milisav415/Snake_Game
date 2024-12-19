@@ -20,4 +20,4 @@ A classic Snake game implemented in Java using Swing for the GUI. This simple ve
    ```bash
    git clone https://github.com/your-username/snake-game-java.git
 
-<img src="image.png" width="512" height="512">
+<img src="2024-12-19_19-59.png" width="256" height="256">
